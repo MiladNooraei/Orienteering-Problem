@@ -35,4 +35,4 @@ In this project, Orienteering Problem was solved using 2 Algorithms:
 1. Dynamic Programming
 2. Floyd Warshall
 
-    The output in terminal is number of node and shows the path and at last the graph and path is plotted.
+The output in terminal is number of node and shows the path and at last the graph and path is plotted.
