@@ -106,7 +106,7 @@ def greedy_orienteering(T_max, nodes, distances):
 
 
 # Load data and run algorithm
-FILENAME = "/Users/miladnooraei/Documents/Coding Era/test2.txt"
+FILENAME = "test.txt"
 
 T_max, P, nodes = read_instance(FILENAME)
 dist_matrix = build_distance_matrix(nodes)
@@ -139,3 +139,4 @@ plt.xlim(-8, 8)
 plt.ylim(-8, 8)
 plt.gca().set_aspect("equal", adjustable="box")
 plt.show()
+
