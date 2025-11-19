@@ -1,38 +1,38 @@
-
 # Orienteering Problem
 
-Using two Algorithms (Dynamic Programming, Floyd Warshall) to solve Orienteering Problem
+This project solves the Orienteering Problem using a greedy score-to-distance heuristic.
+
 ## Introduction
-The Orienteering Problem is a type of optimization problem that involves finding the
-shortest possible route between a set of locations (often referred to as ”control points”)
-while visiting each location only once. The goal is to maximize the total score obtained
-by visiting these locations, where each location has a different score associated with it.
+The Orienteering Problem is an optimisation problem where the goal is to select a path
+that maximises the total score collected from visiting different locations (control points),
+while ensuring the total travel distance does not exceed a given time/distance budget.
+Each point has an associated score, and distances are computed using the Euclidean metric.
 
-The problem is often encountered in the field of operations research, and has many
-real-world applications, such as in logistics, transportation planning, and even in recreational
-activities like hiking and orienteering.
+This problem appears in routing, logistics, tourism planning, and recreational orienteering.
 
-## Instance format
-The first line contains the following data:
-- Tmax P
-where:
-- Tmax = available time budget per path
-- P = number of paths (=1)
-The remaining lines contain the data of each point. For each point, the line contains the following data:
-- x y s
-where:
-- x = x coordinate
-- y = y coordinate
-- s = score
-*REMARKS*
+## Instance Format
+The first line contains:
+- `Tmax  P`
+  - `Tmax` = travel budget
+  - `P` = number of paths (always 1)
+
+Each remaining line contains:
+- `x  y  s`
+  - `x` = x-coordinate
+  - `y` = y-coordinate
+  - `s` = score of the point
+
+**Remarks**
 1. The first point is the starting point.
-2. The second point is the ending point.
-3. The Euclidean distance is used.
+2. Euclidean distance is used.
+3. The objective is to collect the maximum score without exceeding `Tmax`.
 
 ## Description
+This project implements a greedy score/distance heuristic:
+- Start from the first point.
+- Repeatedly select the unvisited point with the highest score-to-distance ratio.
+- Add it to the path if it does not violate the distance budget.
+- Continue until no further points can be visited.
 
-In this project, Orienteering Problem was solved using 2 Algorithms: 
-1. Dynamic Programming
-2. Floyd Warshall
-
-The output in terminal is number of node and shows the path and at last the graph and path is plotted.
+The program prints total distance, total score, and the visited node indices.
+A plot of the final path is also generated.
